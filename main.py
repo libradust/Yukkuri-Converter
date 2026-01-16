@@ -30,7 +30,7 @@ def post_to_pianjia(contents):
     if result:
         final_result=result.find('div',class_="finalresult")
         if final_result:
-            print(f"转换结果: {final_result.get_text(strip=True)}")
+            # print(f"转换结果: {final_result.get_text(strip=True)}")
             return final_result.get_text(strip=True)
 
 def deal_with_result(contents):
@@ -52,15 +52,15 @@ def transform_to_yukkuri(ready_content,voice_type,mp3_name):
     if response.status_code == 200:
         with open(f"{mp3_name}.mp3", "wb") as f:
             f.write(response.content)
-        print(f"音频已保存为{mp3_name}.mp3")
+        print(f"音频已保存为同文件夹下的-{mp3_name}.mp3")
     else:
         print(f"请求失败，状态码: {response.status_code}")
         print(response.text)
 
 
 def main():
-    contents=input("请输入要转换的文本：")
-    voice_type=input("请输入声音类型,可用的有\n"
+    contents=input("输入要转换的文本：")
+    voice_type=input("输入声音类型,可用的有\n"
                      "dvd, f1, f2, imd1, jgr, m1, m2, r1\n"
                      "不填默认为f1：")
     if not voice_type:
@@ -69,6 +69,7 @@ def main():
     result=post_to_pianjia(contents)
     ready_content=deal_with_result(result)
     transform_to_yukkuri(ready_content,voice_type,contents)
+    main()
 
 if __name__ == "__main__":
     main()
