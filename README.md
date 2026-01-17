@@ -2,8 +2,6 @@
 
 通过requests库向[片假名转换器](https://www.ltool.net/chinese_simplified_and_traditional_characters_pinyin_to_katakana_converter_in_simplified_chinese.php)和[油库里语音](https://www.yukumo.net/#/)发包获取音频
 
-### 需要的环境
-- Python3 bs4 requests  
 
 ### 使用方法
 
