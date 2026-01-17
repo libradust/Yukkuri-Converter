@@ -6,6 +6,11 @@
 - Python3 bs4 requests  
 
 ### 使用方法
+
+直接运行Yukkuri-Converter.exe
+
+或
+
 安装模块
 ```bash
 pip install -r requirements.txt
